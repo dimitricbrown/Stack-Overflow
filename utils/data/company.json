@@ -1,0 +1,32 @@
+{
+    "-MiBsBKGWFEU-yluJkL-": {
+      "company_img": "",
+      "firebaseKey": "-MiBsBKGWFEU-yluJkL-",
+      "company_title": "Google",
+      "company_business_title": "Software Company",
+      "company_location": "Seattle Wa",
+      "company_descrpition ": "",
+      "company_tag": "",
+      "uid": ""
+    },
+    "-MiBsknNSQ6aBG1-2lQS": {
+        "company_img": "",
+        "firebaseKey": "-MiBsknNSQ6aBG1-2lQS",
+        "company_title": "HCA",
+        "company_business_title": "Healthcare",
+        "company_location": "USA",
+        "company_descrpition ": "",
+        "company_tag": "",
+        "uid": ""
+    },
+    "-MiBuCve4-r_H-RLUOh2": {
+        "company_img": "",
+        "firebaseKey": "-MiBuCve4-r_H-RLUOh2",
+        "company_title": "Facebook",
+        "company_business_title": "Software Company",
+        "company_location": "Texas",
+        "company_descrpition ": "",
+        "company_tag": "",
+        "uid": ""
+    }
+}
