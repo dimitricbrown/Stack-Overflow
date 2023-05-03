@@ -1,8 +1,8 @@
 {
-  "name": "next-firebase-starter",
+  "name": "stack-under-flow",
   "private": true,
   "version": "1.0.0",
-  "author": "Trinity Christiana",
+  "author": "Steven Johnson, Beilei Zhu",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
