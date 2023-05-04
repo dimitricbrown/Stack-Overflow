@@ -1,22 +1,42 @@
-// import { Button } from 'react-bootstrap'; // TODO: COMMENT IN FOR AUTH
-// import { signOut } from '../utils/auth'; // TODO: COMMENT IN FOR AUTH
-// import { useAuth } from '../utils/context/authContext'; // TODO: COMMENT IN FOR AUTH
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { Button } from 'react-bootstrap';
+import { getQuestions } from '../api/questionData';
+import QuestionCard from '../components/QuestionCard';
 
 function Home() {
-  // const { user } = useAuth(); // TODO: COMMENT IN FOR AUTH
+  const [questions, setQuestions] = useState([]);
 
-  const user = { displayName: 'SDJ Steven Dev Johnson' }; // TODO: COMMENT OUT FOR AUTH
+  const getAllTheQuestions = () => {
+    getQuestions()
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setQuestions(data);
+        } else {
+          console.error('Invalid response from API: expected an array');
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    getAllTheQuestions();
+  }, []);
+
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
-      <h1>Group Project Member: {user.displayName}! </h1>
+    <div className="text-center my-4">
+      <Link href="/questions/new" passHref>
+        <Button>Add A Question</Button>
+      </Link>
+      <div className="d-flex flex-wrap">
+        {/* check if questions is an array before mapping */}
+        {Array.isArray(questions)
+         && questions.map((question) => (
+           <QuestionCard key={question.firebaseKey} questionObj={question} onUpdate={getAllTheQuestions} />
+         ))}
+      </div>
     </div>
   );
 }
