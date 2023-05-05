@@ -11,7 +11,7 @@ const getCompany = () => new Promise((resolve, reject) => {
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(data))
+    .then((data) => resolve(Object.values(data)))
     .catch(reject);
 });
 
@@ -40,8 +40,22 @@ const deleteSingleCompany = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const updateCompany = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/company/${payload.firebaseKey}.json`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then(resolve)
+    .catch(reject);
+});
+
 export {
   getCompany,
+  updateCompany,
   createCompany,
   deleteSingleCompany,
 };
