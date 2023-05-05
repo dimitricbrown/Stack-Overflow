@@ -23,6 +23,9 @@ export default function NavBarAuth() {
             <Link passHref href="/answers">
               <Nav.Link>answer card</Nav.Link>
             </Link>
+            <Link passHref href="/company">
+              <Nav.Link>Company Card</Nav.Link>
+            </Link>
             <Link passHref href="/profile">
               <Nav.Link>Profile</Nav.Link>
             </Link>
