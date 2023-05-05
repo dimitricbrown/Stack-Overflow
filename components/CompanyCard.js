@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import { deleteSingleCompany } from '../api/companyData';
 
 function CompanyCard({ companyObj, onUpdate }) {
-   console.warn(companyObj)
+  console.warn(companyObj);
   const deleteThisCompany = () => {
     if (window.confirm(`Delete ${companyObj.company_title}?`)) {
       deleteSingleCompany(companyObj.firebaseKey).then(() => onUpdate());
@@ -28,7 +28,7 @@ function CompanyCard({ companyObj, onUpdate }) {
     </Card>
   );
 }
-    
+
 CompanyCard.propTypes = {
   companyObj: PropTypes.shape({
     company_img: PropTypes.string,
