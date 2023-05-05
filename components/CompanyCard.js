@@ -1,4 +1,5 @@
 import React from 'react';
+import Accordion from 'react-bootstrap/Accordion';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -19,7 +20,14 @@ function CompanyCard({ companyObj, onUpdate }) {
         <Card.Title>{companyObj.company_title}</Card.Title>
         <Card.Text>{companyObj.company_location}</Card.Text>
         <Card.Text>{companyObj.company_business_title}</Card.Text>
-        <Card.Text>{companyObj.company_descrpition}</Card.Text>
+        <Card.Text>
+          <Accordion defaultActiveKey="0">
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>click to read about us</Accordion.Header>
+              <Accordion.Body>{companyObj.company_descrpition}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </Card.Text>
         <Button variant="primary">{companyObj.company_tag}</Button>
         <Button variant="danger" onClick={deleteThisCompany} className="m-2">
           DELETE
