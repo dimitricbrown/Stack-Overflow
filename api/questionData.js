@@ -16,7 +16,7 @@ const getQuestions = () => new Promise((resolve, reject) => {
 });
 
 const getSingleQuestion = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/teams/${firebaseKey}.json`, {
+  fetch(`${endpoint}/questions/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
