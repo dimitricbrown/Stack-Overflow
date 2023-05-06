@@ -23,15 +23,14 @@ const Company = () => {
   return (
     <div>
       <CompanySearch />
-    <div className="text-center my-4">
-      <div className="d-flex flex-wrap">
-        {/* TODO: map over books here using BookCard component */}
-        {companies.map((company) => (
-          <CompanyCard key={company.firebaseKey} companyObj={company} onUpdate={getAllCompanies} />
-        ))}
+      <div className="text-center my-4">
+        <div className="d-flex flex-wrap">
+          {/* TODO: map over books here using BookCard component */}
+          {companies.map((company) => (
+            <CompanyCard key={company.firebaseKey} companyObj={company} onUpdate={getAllCompanies} />
+          ))}
+        </div>
       </div>
-
-    </div>
     </div>
   );
 };
