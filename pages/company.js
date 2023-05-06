@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import CompanyCard from '../components/CompanyCard';
 import { getCompany } from '../api/companyData';
+import CompanySearch from '../components/CompanySearchBar';
 
 const Company = () => {
   // TODO: Set a state for books
@@ -20,6 +21,8 @@ const Company = () => {
   }, []);
 
   return (
+    <div>
+      <CompanySearch />
     <div className="text-center my-4">
       <div className="d-flex flex-wrap">
         {/* TODO: map over books here using BookCard component */}
@@ -28,6 +31,7 @@ const Company = () => {
         ))}
       </div>
 
+    </div>
     </div>
   );
 };
