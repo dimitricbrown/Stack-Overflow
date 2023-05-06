@@ -78,6 +78,10 @@ function CompanyForm({ obj }) {
         <Form.Control type="text" placeholder="company_location" name="company_location" value={formInput.company_location} onChange={handleChange} required />
       </FloatingLabel>
 
+      <FloatingLabel controlId="floatingInput3" label="Give us a #" className="mb-3">
+        <Form.Control type="text" placeholder="company_tag" name="company_tag" value={formInput.company_tag} onChange={handleChange} required />
+      </FloatingLabel>
+
       {/* SUBMIT BUTTON  */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Company</Button>
     </Form>
