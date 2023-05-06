@@ -65,7 +65,7 @@ function CompanyForm({ obj }) {
         <Form.Control type="text" placeholder="company_title" name="company_title" value={formInput.company_title} onChange={handleChange} required />
       </FloatingLabel>
 
-      {/* PRICE INPUT  */}
+      {/* BUSINESS_TITLE INPUT  */}
       <FloatingLabel controlId="floatingInput3" label="Please enter what type of company this is" className="mb-3">
         <Form.Control type="text" placeholder="company_business_title" name="company_business_title" value={formInput.company_business_title} onChange={handleChange} required />
       </FloatingLabel>
