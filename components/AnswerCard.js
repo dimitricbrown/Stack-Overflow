@@ -22,6 +22,9 @@ function AnswerCard({ answerObj, onUpdate }) {
         <Button variant="danger" onClick={deleteThisAnswer} className="m-2">
           DELETE
         </Button>
+        <Button variant="danger" onClick={deleteThisAnswer} className="m-2">
+          Add a answer
+        </Button>
       </Card.Body>
     </Card>
   );
