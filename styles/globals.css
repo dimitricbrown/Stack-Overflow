@@ -20,3 +20,14 @@ a {
 body {
   background-color: #ffffff;
 }
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  background-color: white;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
