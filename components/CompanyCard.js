@@ -1,6 +1,7 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import PropTypes from 'prop-types';
+import { CloseButton } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { deleteSingleCompany } from '../api/companyData';
@@ -14,7 +15,8 @@ function CompanyCard({ companyObj, onUpdate }) {
   };
 
   return (
-      <Card className="e-card e-card-horizontal" style={{ display: `flex`, flexDirection: `row`, justifyContent: `center`, width: '80%' }}>
+    <div id="companyContainer">
+      <Card className="e-card e-card-horizontal" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', width: '100%' }}>
       <Card.Img variant="center" src={companyObj.company_img} style={{ height: '100px' }} />
       <Card.Body className="e-card-stacked">
         <Card.Title>{companyObj.company_title}</Card.Title>
@@ -29,11 +31,12 @@ function CompanyCard({ companyObj, onUpdate }) {
           </Accordion>
         </Card.Text>
         <Button variant="primary">{companyObj.company_tag}</Button>
-        <Button variant="danger" onClick={deleteThisCompany} className="m-2">
-          DELETE
-        </Button>
+        <CloseButton id="closeButton" variant="white" onClick={deleteThisCompany} className="m-2">
+          X
+        </CloseButton>
       </Card.Body>
     </Card>
+    </div>
   );
 }
 

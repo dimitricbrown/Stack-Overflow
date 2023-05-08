@@ -53,6 +53,8 @@ function CompanyForm({ obj }) {
   };
 
   return (
+    <div>
+    <h2>Stack Underflow Company Creation</h2>
     <Form onSubmit={handleSubmit}>
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Company</h2>
 
@@ -85,6 +87,7 @@ function CompanyForm({ obj }) {
       {/* SUBMIT BUTTON  */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Company</Button>
     </Form>
+    </div>
   );
 }
 
