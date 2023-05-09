@@ -2,6 +2,7 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import PropTypes from 'prop-types';
+import { CloseButton } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { deleteSingleCompany } from '../api/companyData';
@@ -15,6 +16,30 @@ function CompanyCard({ companyObj, onUpdate }) {
   };
 
   return (
+
+    <div id="companyContainer">
+      <Card className="e-card e-card-horizontal" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', width: '100%' }}>
+        <Card.Img variant="center" src={companyObj.company_img} style={{ height: '100px' }} />
+        <Card.Body className="e-card-stacked">
+          <Card.Title>{companyObj.company_title}</Card.Title>
+          <Card.Text>{companyObj.company_location}</Card.Text>
+          <Card.Text>{companyObj.company_business_title}</Card.Text>
+          <Card.Text>
+            <Accordion defaultActiveKey="0">
+              <Accordion.Item eventKey="1">
+                <Accordion.Header>click to read about us</Accordion.Header>
+                <Accordion.Body>{companyObj.company_descrpition}</Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </Card.Text>
+          <Button variant="primary">{companyObj.company_tag}</Button>
+          <CloseButton id="closeButton" variant="white" onClick={deleteThisCompany} className="m-2">
+            X
+          </CloseButton>
+        </Card.Body>
+      </Card>
+    </div>
+
     <Card className="e-card e-card-horizontal" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', width: '80%' }}>
       <Card.Img variant="center" src={companyObj.company_img} style={{ height: '100px' }} />
       <Card.Body className="e-card-stacked">
