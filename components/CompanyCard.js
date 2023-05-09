@@ -39,7 +39,6 @@ function CompanyCard({ companyObj, onUpdate }) {
         </Card.Body>
       </Card>
     </div>
-
     
   );
 }
