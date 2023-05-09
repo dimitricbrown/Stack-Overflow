@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import CompanyCard from '../components/CompanyCard';
 import { getCompany } from '../api/companyData';
+import CompanySearch from '../components/CompanySearchBar';
 
 const Company = () => {
   // TODO: Set a state for books
@@ -25,6 +26,7 @@ const Company = () => {
 
   return (
     <div>
+
       <input
         type="text"
         id="myInput"
@@ -50,6 +52,15 @@ const Company = () => {
             .map((company, filter) => (
               <CompanyCard key={filter} companyObj={company} onUpdate={getAllCompanies} />
             ))}
+
+      <CompanySearch />
+      <div className="text-center my-4">
+        <div className="d-flex flex-wrap">
+          {/* TODO: map over books here using BookCard component */}
+          {companies.map((company) => (
+            <CompanyCard key={company.firebaseKey} companyObj={company} onUpdate={getAllCompanies} />
+          ))}
+
         </div>
       </div>
     </div>
