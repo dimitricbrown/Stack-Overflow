@@ -14,7 +14,12 @@ function CompanyCard({ companyObj, onUpdate }) {
   };
 
   return (
-      <Card className="e-card e-card-horizontal" style={{ display: `flex`, flexDirection: `row`, justifyContent: `center`, width: '80%' }}>
+    <Card
+      className="e-card e-card-horizontal"
+      style={{
+        display: 'flex', flexDirection: 'row', justifyContent: 'center', width: '80%',
+      }}
+    >
       <Card.Img variant="center" src={companyObj.company_img} style={{ height: '100px' }} />
       <Card.Body className="e-card-stacked">
         <Card.Title>{companyObj.company_title}</Card.Title>
