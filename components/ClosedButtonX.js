@@ -1,7 +1,7 @@
 /* eslint-disable */
-import CloseButton from 'react-bootstrap/CloseButton';
+import CloseButton from 'react-bootstrap';
 
-function CloseButton() {
+function CloseButtonX() {
   return (
     <div>
       <CloseButton variant="white" />
@@ -10,4 +10,4 @@ function CloseButton() {
   );
 }
 
-export default CloseButton;
+export default CloseButtonX;
