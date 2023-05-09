@@ -54,39 +54,39 @@ function CompanyForm({ obj }) {
 
   return (
     <div>
-    <h2>Stack Underflow Company Creation</h2>
-    <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Company</h2>
+      <h2>Stack Underflow Company Creation</h2>
+      <Form onSubmit={handleSubmit}>
+        <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Company</h2>
 
-      <FloatingLabel controlId="floatingInput2" label="Please insert your company logo/image" className="mb-3">
-        <Form.Control type="url" placeholder="Enter an image url" name="company_img" value={formInput.company_img} onChange={handleChange} required />
-      </FloatingLabel>
+        <FloatingLabel controlId="floatingInput2" label="Please insert your company logo/image" className="mb-3">
+          <Form.Control type="url" placeholder="Enter an image url" name="company_img" value={formInput.company_img} onChange={handleChange} required />
+        </FloatingLabel>
 
-      {/* TITLE INPUT  */}
-      <FloatingLabel controlId="floatingInput1" label="Please enter company name" className="mb-3">
-        <Form.Control type="text" placeholder="company_title" name="company_title" value={formInput.company_title} onChange={handleChange} required />
-      </FloatingLabel>
+        {/* TITLE INPUT  */}
+        <FloatingLabel controlId="floatingInput1" label="Please enter company name" className="mb-3">
+          <Form.Control type="text" placeholder="company_title" name="company_title" value={formInput.company_title} onChange={handleChange} required />
+        </FloatingLabel>
 
-      {/* BUSINESS_TITLE INPUT  */}
-      <FloatingLabel controlId="floatingInput3" label="Please enter what type of company this is" className="mb-3">
-        <Form.Control type="text" placeholder="company_business_title" name="company_business_title" value={formInput.company_business_title} onChange={handleChange} required />
-      </FloatingLabel>
+        {/* BUSINESS_TITLE INPUT  */}
+        <FloatingLabel controlId="floatingInput3" label="Please enter what type of company this is" className="mb-3">
+          <Form.Control type="text" placeholder="company_business_title" name="company_business_title" value={formInput.company_business_title} onChange={handleChange} required />
+        </FloatingLabel>
 
-      <FloatingLabel controlId="floatingInput3" label="Please enter breif description about your company" className="mb-3">
-        <Form.Control type="text" placeholder="company_descrpition" name="company_descrpition" value={formInput.company_descrpition} onChange={handleChange} required />
-      </FloatingLabel>
+        <FloatingLabel controlId="floatingInput3" label="Please enter breif description about your company" className="mb-3">
+          <Form.Control type="text" placeholder="company_descrpition" name="company_descrpition" value={formInput.company_descrpition} onChange={handleChange} required />
+        </FloatingLabel>
 
-      <FloatingLabel controlId="floatingInput3" label="Please tell us where your company's headquaters is" className="mb-3">
-        <Form.Control type="text" placeholder="company_location" name="company_location" value={formInput.company_location} onChange={handleChange} required />
-      </FloatingLabel>
+        <FloatingLabel controlId="floatingInput3" label="Please tell us where your company's headquaters is" className="mb-3">
+          <Form.Control type="text" placeholder="company_location" name="company_location" value={formInput.company_location} onChange={handleChange} required />
+        </FloatingLabel>
 
-      <FloatingLabel controlId="floatingInput3" label="Give us a #" className="mb-3">
-        <Form.Control type="text" placeholder="company_tag" name="company_tag" value={formInput.company_tag} onChange={handleChange} required />
-      </FloatingLabel>
+        <FloatingLabel controlId="floatingInput3" label="Give us a #" className="mb-3">
+          <Form.Control type="text" placeholder="company_tag" name="company_tag" value={formInput.company_tag} onChange={handleChange} required />
+        </FloatingLabel>
 
-      {/* SUBMIT BUTTON  */}
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Company</Button>
-    </Form>
+        {/* SUBMIT BUTTON  */}
+        <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Company</Button>
+      </Form>
     </div>
   );
 }

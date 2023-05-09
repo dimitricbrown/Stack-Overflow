@@ -1,12 +1,13 @@
+/* eslint-disable */
 import CloseButton from 'react-bootstrap/CloseButton';
 
-function VariantsExample() {
+function CloseButton() {
   return (
-    <div className="bg-dark p-3">
+    <div>
       <CloseButton variant="white" />
       <CloseButton variant="white" disabled />
     </div>
   );
 }
 
-export default VariantsExample;
+export default CloseButton;
