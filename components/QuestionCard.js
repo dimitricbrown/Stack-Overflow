@@ -4,8 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import { deleteSingleQuestion } from '../api/questionData';
+import { useAuth } from '../utils/context/authContext';
 
 function QuestionCard({ questionObj, onUpdate }) {
+  const { user } = useAuth();
   const deleteThisQuestion = () => {
     if (window.confirm(`Delete ${questionObj.title}?`)) {
       deleteSingleQuestion(questionObj.firebaseKey).then(() => onUpdate());
@@ -23,12 +25,16 @@ function QuestionCard({ questionObj, onUpdate }) {
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
-        <Link href={`/questions/edit/${questionObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
-        </Link>
-        <Button variant="danger" onClick={deleteThisQuestion} className="m-2">
-          DELETE
-        </Button>
+        {questionObj.uid === user.uid ? (
+          <Link href={`/questions/edit/${questionObj.firebaseKey}`} passHref>
+            <Button variant="info">EDIT</Button>
+          </Link>
+        ) : ''}
+        {questionObj.uid === user.uid ? (
+          <Button variant="danger" onClick={deleteThisQuestion} className="m-2">
+            DELETE
+          </Button>
+        ) : ''}
       </Card.Body>
     </Card>
   );
@@ -39,6 +45,7 @@ QuestionCard.propTypes = {
     title: PropTypes.string,
     definition: PropTypes.string,
     firebaseKey: PropTypes.string,
+    uid: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
