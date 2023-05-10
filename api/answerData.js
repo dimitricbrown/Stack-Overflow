@@ -2,7 +2,7 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-// FIXME:  GET ALL AUTHORS
+// FIXME:  GET ALL books
 const getAnswers = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/answers/.json`, {
     method: 'GET',
@@ -15,6 +15,7 @@ const getAnswers = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// get single book
 const getSingleAnswers = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/answers/${firebaseKey}.json`, {
     method: 'GET',

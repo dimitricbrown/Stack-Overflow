@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Link from 'next/link';
 import { deleteSingleAnswers } from '../api/answerData';
 
 function AnswerCard({ answerObj, onUpdate }) {
@@ -15,15 +16,15 @@ function AnswerCard({ answerObj, onUpdate }) {
 
   return (
     <Card style={{ width: '80%', color: 'black' }}>
-      <Card.Title>My Answer: {answerObj.title}</Card.Title>
+      <Card.Title>Answer</Card.Title>
       <Card.Body>
+        <Card.Text>{answerObj.title}</Card.Text>
         <Card.Text>{answerObj.details}</Card.Text>
-        <p>Answer: {answerObj.answer}</p>
-        <Button variant="danger" onClick={deleteThisAnswer} className="m-2">
+        <Link href={`/answers/edit/${answerObj.firebaseKey}`} passHref>
+          <Button variant="info">EDIT</Button>
+        </Link>
+        <Button variant="outline-secondary" onClick={deleteThisAnswer} className="m-2">
           DELETE
-        </Button>
-        <Button variant="danger" onClick={deleteThisAnswer} className="m-2">
-          Add a answer
         </Button>
       </Card.Body>
     </Card>
@@ -32,9 +33,9 @@ function AnswerCard({ answerObj, onUpdate }) {
 
 AnswerCard.propTypes = {
   answerObj: PropTypes.shape({
-    answer: PropTypes.string,
     title: PropTypes.string,
     details: PropTypes.string,
+    image: PropTypes.string,
     questionID: PropTypes.string,
     firebaseKey: PropTypes.string,
     uid: PropTypes.string,
