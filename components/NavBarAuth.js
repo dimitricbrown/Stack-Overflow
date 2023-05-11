@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Navbar, Container, Nav, Button,
 } from 'react-bootstrap';
@@ -12,10 +13,11 @@ export default function NavBarAuth() {
       <Container>
         <Link passHref href="/">
           <Navbar.Brand>
-            <img
+            <Image
               src="/Background.png"
               alt="Stack Overflow"
               height={40}
+              width={180}
             />
           </Navbar.Brand>
         </Link>
