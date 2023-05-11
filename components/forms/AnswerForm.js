@@ -39,7 +39,7 @@ function AnswerForm({ obj, questionId }) {
       const payload2 = {
         ...formInput,
         uid: user.uid,
-        questionId: questionId,
+        questionId,
         firebaseKey: null,
       };
       createAnswers(payload2).then(({ name }) => {
@@ -53,9 +53,8 @@ function AnswerForm({ obj, questionId }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Answer</h2>
       {/* TITLE INPUT  */}
-      <FloatingLabel controlId="floatingInput1" label="Enter Answer" className="mb-3">
+      <FloatingLabel controlId="floatingInput1" label="Enter Answer" className="mb-3" style={{ marginTop: '20px' }}>
         <Form.Control
           type="text"
           placeholder="Enter an Answer"
@@ -75,11 +74,13 @@ function AnswerForm({ obj, questionId }) {
           value={formInput.details}
           onChange={handleChange}
           required
+          style={{ height: '150px' }}
         />
       </FloatingLabel>
-
-      {/* SUBMIT BUTTON  */}
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Answers</Button>
+      <div>
+        {/* SUBMIT BUTTON  */}
+        <Button type="submit" style={{ marginBottom: '30px' }}>{obj.firebaseKey ? 'Update' : 'Post'} Your Answer</Button>
+      </div>
     </Form>
   );
 }

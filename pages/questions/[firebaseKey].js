@@ -1,10 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { viewQuestionDetails } from '../../api/mergeData';
 import AnswerCard from '../../components/AnswerCard';
-import { getQuestionAnswers } from '../../api/questionData';
+import { getQuestionAnswers } from '../../api/questionData'; // added postAnswer function
 import AnswerForm from '../../components/forms/AnswerForm';
+import { createAnswers } from '../../api/answerData';
 
 export default function ViewAnswer() {
   const [singleDetails, setAnswerDetails] = useState({});
@@ -21,18 +21,25 @@ export default function ViewAnswer() {
     getQuestionAnswers(firebaseKey).then(setAnswers);
   }, []);
 
+  const handleAnswerSubmit = async (answer) => {
+    await createAnswers(firebaseKey, answer); // send the answer to the server
+    setAnswers([...answers, answer]); // update the answers state with the new array that includes the newly submitted answer
+  };
+
   return (
     <div className="mt-5">
       <div className="single-question">
-        <h1>Question： {singleDetails.title}</h1>
-        <h3>{singleDetails.definition}</h3>
+        <h2>Question： {singleDetails.title}</h2>
+        <h style={{ marginButton: '100px' }}>{singleDetails.definition}</h>
       </div>
-      <AnswerForm obj={{}} questionId={firebaseKey} />
-      <div className="d-flex flex-wrap">
+      <h5 style={{ marginTop: '80px' }}>{answers.length} Answers</h5>
+      <div className="AnswerCardShow d-flex flex-wrap" style={{ marginTop: '20px' }}>
         {answers.map((answer) => (
           <AnswerCard key={answer.firebaseKey} answerObj={answer} onUpdate={getQuestionAnswers} />
         ))}
-
+      </div>
+      <div className="mt-5">
+        <AnswerForm obj={{}} questionId={firebaseKey} onSubmit={handleAnswerSubmit} />
       </div>
     </div>
   );

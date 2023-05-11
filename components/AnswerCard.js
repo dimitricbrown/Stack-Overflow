@@ -16,7 +16,6 @@ function AnswerCard({ answerObj, onUpdate }) {
 
   return (
     <Card style={{ width: '80%', color: 'black' }}>
-      <Card.Title>Answer</Card.Title>
       <Card.Body>
         <Card.Text>{answerObj.title}</Card.Text>
         <Card.Text>{answerObj.details}</Card.Text>

@@ -11,7 +11,13 @@ export default function NavBarAuth() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>stack underflow</Navbar.Brand>
+          <Navbar.Brand>
+            <img
+              src="/Background.png"
+              alt="Stack Overflow"
+              height={40}
+            />
+          </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

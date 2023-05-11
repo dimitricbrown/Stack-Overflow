@@ -11,9 +11,6 @@ export default function SideNavBar() {
         <Link passHref href="/">
           <Nav.Link>Questions</Nav.Link>
         </Link>
-        <Link passHref href="/answers">
-          <Nav.Link>Answers</Nav.Link>
-        </Link>
         <Link passHref href="/company">
           <Nav.Link>Companies</Nav.Link>
         </Link>
@@ -22,6 +19,9 @@ export default function SideNavBar() {
         </Link>
         <Link passHref href="/profile">
           <Nav.Link>Profile</Nav.Link>
+        </Link>
+        <Link passHref href="/users">
+          <Nav.Link>Users</Nav.Link>
         </Link>
       </Nav>
     </Container>
