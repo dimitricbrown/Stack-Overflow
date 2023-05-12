@@ -63,7 +63,6 @@ body {
 .main {
   display: flex;
   flex-direction: row;
-
 }
 
 #myInput {
@@ -133,12 +132,7 @@ body {
 
 .footer {
   background-color: black;
-  background-image: none;
-  background-position: var(--theme-footer-background-position);
-  background-repeat: var(--theme-footer-background-repeat);
-  border-top: var(--theme-footer-background-border-top);
-  background-size: var(--theme-footer-background-size);
-  color: var(--theme-footer-text-color);
+  color: white;
   padding-top: var(--theme-footer-padding-top);
   padding-bottom: var(--theme-footer-padding-bottom);
   box-sizing: border-box;
@@ -184,7 +178,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: var(--su12);
-  color: var(--theme-footer-title-color);
+  color: #babfc4;
   line-height: var(--lh-md);
   margin-top: 0;
 }
@@ -194,7 +188,7 @@ body {
   list-style: none;
 }
 .footer-subtopic {
-  color: var(--theme-footer-link-color);
+  color: #9199A1;
   padding: var(--su4) 0;
   line-height: var(--lh-md);
   display: inline-block;
@@ -216,4 +210,10 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  color: #9199A1;
+}
+
+.fix-footer-bottom {
+  position: relative;
+  width: 100%
 }
