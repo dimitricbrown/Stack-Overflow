@@ -39,7 +39,7 @@ function AnswerForm({ obj, questionId }) {
       const payload2 = {
         ...formInput,
         uid: user.uid,
-        questionId: questionId,
+        questionId,
         firebaseKey: null,
       };
       createAnswers(payload2).then(({ name }) => {

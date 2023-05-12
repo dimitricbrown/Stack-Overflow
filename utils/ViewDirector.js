@@ -4,6 +4,7 @@ import Loading from '../components/Loading';
 import Signin from '../components/Signin';
 import NavBarAuth from '../components/NavBarAuth';
 import SideNavBar from '../components/SideNavBar';
+import Footer from '../components/Footer';
 
 const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) => {
   const { user, userLoading } = useAuth();
@@ -24,6 +25,7 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
             <Component {...pageProps} />
           </div>
         </div>
+        <Footer />
       </>
     );
   }
