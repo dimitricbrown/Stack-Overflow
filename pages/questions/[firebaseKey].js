@@ -45,7 +45,6 @@ export default function ViewAnswer() {
           <AnswerCard key={answer.firebaseKey} answerObj={answer} onUpdate={getQuestionAnswers} />
         ))}
       </div>
-      <h5 className="mt-5" style={{ marginTop: '80px' }}>Your Answer</h5>
       <div className="mt-5">
         <AnswerForm obj={{}} questionId={firebaseKey} onSubmit={handleAnswerSubmit} />
       </div>
