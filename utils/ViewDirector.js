@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import { useAuth } from './context/authContext';
 import Loading from '../components/Loading';
 import Signin from '../components/Signin';
 import NavBarAuth from '../components/NavBarAuth';
 import SideNavBar from '../components/SideNavBar';
 import Footer from '../components/Footer';
+import RightCard from '../components/rightCard';
 
 const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) => {
   const { user, userLoading } = useAuth();
@@ -22,7 +25,14 @@ const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) 
         <div className="main">
           <SideNavBar />
           <div className="container">
-            <Component {...pageProps} />
+            <Row>
+              <Col sm={8}>
+                <Component {...pageProps} />
+              </Col>
+              <Col sm={4}>
+                <RightCard />
+              </Col>
+            </Row>
           </div>
         </div>
         <Footer />

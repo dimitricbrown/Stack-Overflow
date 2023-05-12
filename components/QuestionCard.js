@@ -15,15 +15,14 @@ function QuestionCard({ questionObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '80%', color: 'black' }}>
+    <Card style={{ width: '100%', color: 'black' }}>
       <Card.Body>
-        <Card.Title>{questionObj.title}</Card.Title>
+        <Link href={`/questions/${questionObj.firebaseKey}`} passHref>
+          <Card.Title style={{ color: '#0074cc' }}>{questionObj.title}</Card.Title>
+        </Link>
         <Card.Text>
           {questionObj.definition}
         </Card.Text>
-        <Link href={`/questions/${questionObj.firebaseKey}`} passHref>
-          <Button variant="primary" className="m-2">VIEW</Button>
-        </Link>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
         {questionObj.uid === user.uid ? (
           <Link href={`/questions/edit/${questionObj.firebaseKey}`} passHref>
