@@ -38,7 +38,7 @@ export default function ViewAnswer() {
     <div className="mt-5">
       <div className="single-question">
         <h2>Question： {singleDetails.title}</h2>
-        <h style={{ marginButton: '100px' }}>{singleDetails.definition}</h>
+        <p style={{ marginButton: '100px' }}>{singleDetails.definition}</p>
       </div>
       <h5 style={{ marginTop: '80px' }}>{answers.length} Answers</h5>
       <div className="AnswerCardShow d-flex flex-wrap" style={{ marginTop: '20px' }}>
@@ -47,6 +47,7 @@ export default function ViewAnswer() {
         ))}
       </div>
       <div className="mt-5">
+        <h5>Your Answer</h5>
         <AnswerForm obj={{}} questionId={firebaseKey} onSubmit={handleAnswerSubmit} />
       </div>
     </div>
