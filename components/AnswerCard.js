@@ -21,16 +21,25 @@ function AnswerCard({ answerObj, onUpdate }) {
       <Card.Body>
         <Card.Text>{answerObj.title}</Card.Text>
         <Card.Text>{answerObj.details}</Card.Text>
-        {answerObj.uid === user.uid ? (
-          <Link href={`/answers/edit/${answerObj.firebaseKey}`} passHref>
-            <Button variant="info">EDIT</Button>
-          </Link>
-        ) : ''}
-        {answerObj.uid === user.uid ? (
-          <Button variant="outline-secondary" onClick={deleteThisAnswer} className="m-2">
-            DELETE
-          </Button>
-        ) : ''}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          {answerObj.uid === user.uid ? (
+            <Link href={`/answers/edit/${answerObj.firebaseKey}`} passHref>
+              <Button variant="outline-warning" style={{ height: '100%' }}>EDIT</Button>
+            </Link>
+          ) : ''}
+          {answerObj.uid === user.uid ? (
+            <Button variant="outline-secondary" onClick={deleteThisAnswer} className="m-2" style={{ height: '100%' }}>
+              DELETE
+            </Button>
+          ) : ''}
+          {answerObj.uid === user.uid ? (
+            <div style={{ display: 'flex'}}>
+              <img src={user.photoURL} alt={user.displayName} style={{ height: '30px', width: '30px', borderRadius: '50%', marginRight: '10px' }} />
+              <p>{user.displayName}</p>
+            </div>
+          ) : ''}
+        </div>
+
       </Card.Body>
     </Card>
   );
