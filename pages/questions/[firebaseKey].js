@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { viewQuestionDetails } from '../../api/mergeData';
 import AnswerCard from '../../components/AnswerCard';
-import { getQuestionAnswers } from '../../api/questionData'; // added postAnswer function
+import { getQuestionAnswers } from '../../api/questionData';
 import AnswerForm from '../../components/forms/AnswerForm';
+
+// Import the modified createAnswers function that uses fetch
 import { createAnswers } from '../../api/answerData';
 
 export default function ViewAnswer() {
@@ -22,9 +24,14 @@ export default function ViewAnswer() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleAnswerSubmit = async (answer) => {
-    await createAnswers(firebaseKey, answer); // send the answer to the server
-    setAnswers([...answers, answer]); // update the answers state with the new array that includes the newly submitted answer
+  const handleAnswerSubmit = (answer) => {
+    createAnswers(firebaseKey, answer)
+      .then((data) => {
+        setAnswers([...answers, data]);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   };
 
   return (
