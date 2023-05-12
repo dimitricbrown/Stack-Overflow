@@ -15,7 +15,7 @@ function QuestionCard({ questionObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '80%', color: 'black' }}>
       <Card.Body>
         <Card.Title>{questionObj.title}</Card.Title>
         <Card.Text>
