@@ -5,7 +5,7 @@ import {
 
 export default function Footer() {
   return (
-    <Navbar className="test" collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="bottom">
+    <Navbar className="fix-footer-bottom" collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="bottom">
       <Container>
         <div className="fd footer-logo" />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
