@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Button } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap';
 import { getQuestions } from '../api/questionData';
 import QuestionCard from '../components/QuestionCard';
+import RightCard from '../components/RightCard';
 
 function Home() {
   const [questions, setQuestions] = useState([]);
@@ -28,31 +31,37 @@ function Home() {
   }, []);
 
   return (
-    <div className="container">
-      <div
-        style={{
-          marginTop: '50px',
-          marginBottom: '10px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <h3>All Questions</h3>
-        <div>
-          <Link href="/questions/new" passHref>
-            <Button variant="info">Ask Question</Button>
-          </Link>
-        </div>
-      </div>
-      <h5 style={{ marginTop: '60px' }}>{count} Questions</h5>
-      <div className="d-flex flex-wrap" style={{ width: '100%', color: 'black' }}>
-        {/* check if questions is an array before mapping */}
-        {Array.isArray(questions)
-         && questions.map((question) => (
-           <QuestionCard key={question.firebaseKey} questionObj={question} onUpdate={getAllTheQuestions} />
-         ))}
-      </div>
+    <div>
+      <Row>
+        <Col sm={8}>
+          <div className="containerQuestion">
+            <div
+              style={{
+                marginTop: '50px',
+                marginBottom: '10px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <h3>All Questions</h3>
+              <div>
+                <Link href="/questions/new" passHref>
+                  <Button variant="info">Ask Question</Button>
+                </Link>
+              </div>
+            </div>
+            <h5 style={{ marginTop: '60px' }}>{count} Questions</h5>
+            <div className="d-flex flex-wrap" style={{ width: '100%', color: 'black' }}>
+              {/* check if questions is an array before mapping */}
+              {Array.isArray(questions) && questions.map((question) => <QuestionCard key={question.firebaseKey} questionObj={question} onUpdate={getAllTheQuestions} />)}
+            </div>
+          </div>
+        </Col>
+        <Col sm={4}>
+          <RightCard />
+        </Col>
+      </Row>
     </div>
   );
 }

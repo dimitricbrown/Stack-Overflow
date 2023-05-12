@@ -33,8 +33,17 @@ function AnswerCard({ answerObj, onUpdate }) {
             </Button>
           ) : ''}
           {answerObj.uid === user.uid ? (
-            <div style={{ display: 'flex'}}>
-              <img src={user.photoURL} alt={user.displayName} style={{ height: '30px', width: '30px', borderRadius: '50%', marginRight: '10px' }} />
+            <div style={{ display: 'flex' }}>
+              <img
+                src={user.photoURL}
+                alt={user.displayName}
+                style={{
+                  height: '30px',
+                  width: '30px',
+                  borderRadius: '50%',
+                  marginRight: '10px',
+                }}
+              />
               <p>{user.displayName}</p>
             </div>
           ) : ''}

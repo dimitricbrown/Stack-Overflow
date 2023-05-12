@@ -68,10 +68,9 @@ const deleteSingleUser = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 export {
-  getQuestions,
-  getSingleQuestion,
-  createQuestion,
-  updateQuestion,
-  deleteSingleQuestion,
-  getQuestionAnswers,
+  getUsers,
+  getSingleUser,
+  createUser,
+  updateUser,
+  deleteSingleUser,
 };
