@@ -121,3 +121,99 @@ body {
     top: -10px;
     right: -10px;
 }
+
+.fd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.footer {
+  background-color: black;
+  background-image: none;
+  background-position: var(--theme-footer-background-position);
+  background-repeat: var(--theme-footer-background-repeat);
+  border-top: var(--theme-footer-background-border-top);
+  background-size: var(--theme-footer-background-size);
+  color: var(--theme-footer-text-color);
+  padding-top: var(--theme-footer-padding-top);
+  padding-bottom: var(--theme-footer-padding-bottom);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  width: 100%;
+}
+.footer-container {
+  max-width: 1264px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--su32) var(--su12) var(--su12) var(--su12);
+  display: flex;
+  flex-flow: row wrap;
+  box-sizing: border-box; 
+}
+
+.footer-logo {
+  flex: 0 0 64px;
+  margin: calc(var(--su12) * -1) 0 var(--su32) 0;
+}
+
+.footer-nav {
+  display: flex;
+  flex: 2 1 auto;
+  flex-wrap: wrap;
+}
+
+.footer-block {
+  padding: 0 var(--su12) var(--su24) 0;
+  flex: 1 0 auto;
+}
+
+.footer-topic {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: var(--su12);
+  color: var(--theme-footer-title-color);
+  line-height: var(--lh-md);
+  margin-top: 0;
+}
+
+.footer-ul {
+  margin: 0;
+  list-style: none;
+}
+.footer-subtopic {
+  color: var(--theme-footer-link-color);
+  padding: var(--su4) 0;
+  line-height: var(--lh-md);
+  display: inline-block;
+  text-decoration: none;
+  --_li-fc: var(--theme-link-color);
+  --_li-fc-hover: var(--theme-link-color-hover);
+  --_li-fc-visited: var(--theme-link-color-visited);
+}
+
+.footer-social {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-fine) !important;
+}
+
+.footer-sub-social {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
