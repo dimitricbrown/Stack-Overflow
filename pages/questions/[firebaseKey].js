@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { viewQuestionDetails } from '../../api/mergeData';
 import AnswerCard from '../../components/AnswerCard';
-import { getQuestionAnswers } from '../../api/questionData'; // added postAnswer function
+import { getQuestionAnswers } from '../../api/questionData';
 import AnswerForm from '../../components/forms/AnswerForm';
+
+// Import the modified createAnswers function that uses fetch
 import { createAnswers } from '../../api/answerData';
 
 export default function ViewAnswer() {
@@ -21,9 +23,14 @@ export default function ViewAnswer() {
     getQuestionAnswers(firebaseKey).then(setAnswers);
   }, []);
 
-  const handleAnswerSubmit = async (answer) => {
-    await createAnswers(firebaseKey, answer); // send the answer to the server
-    setAnswers([...answers, answer]); // update the answers state with the new array that includes the newly submitted answer
+  const handleAnswerSubmit = (answer) => {
+    createAnswers(firebaseKey, answer)
+      .then((data) => {
+        setAnswers([...answers, data]);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   };
 
   return (
@@ -38,6 +45,7 @@ export default function ViewAnswer() {
           <AnswerCard key={answer.firebaseKey} answerObj={answer} onUpdate={getQuestionAnswers} />
         ))}
       </div>
+      <h5 className="mt-5" style={{ marginTop: '80px' }}>Your Answer</h5>
       <div className="mt-5">
         <AnswerForm obj={{}} questionId={firebaseKey} onSubmit={handleAnswerSubmit} />
       </div>

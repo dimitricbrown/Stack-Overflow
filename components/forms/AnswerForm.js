@@ -54,7 +54,7 @@ function AnswerForm({ obj, questionId }) {
   return (
     <Form onSubmit={handleSubmit}>
       {/* TITLE INPUT  */}
-      <FloatingLabel controlId="floatingInput1" label="Enter Answer" className="mb-3" style={{ marginTop: '20px' }}>
+      <FloatingLabel controlId="floatingInput1" label="Enter Answer" className="mb-3">
         <Form.Control
           type="text"
           placeholder="Enter an Answer"
