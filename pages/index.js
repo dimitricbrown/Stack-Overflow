@@ -13,7 +13,7 @@ function Home() {
       .then((data) => {
         if (Array.isArray(data)) {
           setQuestions(data);
-          setCount(data.length);
+          setCount(data.length); // here is updating the count
         } else {
           console.error('Invalid response from API: expected an array');
         }

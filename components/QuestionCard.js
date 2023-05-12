@@ -24,16 +24,24 @@ function QuestionCard({ questionObj, onUpdate }) {
           {questionObj.definition}
         </Card.Text>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
-        {questionObj.uid === user.uid ? (
-          <Link href={`/questions/edit/${questionObj.firebaseKey}`} passHref>
-            <Button variant="info">EDIT</Button>
-          </Link>
-        ) : ''}
-        {questionObj.uid === user.uid ? (
-          <Button variant="danger" onClick={deleteThisQuestion} className="m-2">
-            DELETE
-          </Button>
-        ) : ''}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          {questionObj.uid === user.uid ? (
+            <Link href={`/questions/edit/${questionObj.firebaseKey}`} passHref>
+              <Button variant="outline-warning">EDIT</Button>
+            </Link>
+          ) : ''}
+          {questionObj.uid === user.uid ? (
+            <Button variant="outline-warning" onClick={deleteThisQuestion} className="m-2">
+              DELETE
+            </Button>
+          ) : ''}
+          {questionObj.uid === user.uid ? (
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <img src={user.photoURL} alt={user.displayName} style={{ height: '30px', width: '30px', borderRadius: '50%', marginRight: '10px' }} />
+              <p>{user.displayName}</p>
+            </div>
+          ) : ''}
+        </div>
       </Card.Body>
     </Card>
   );
