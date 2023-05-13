@@ -217,3 +217,8 @@ body {
   position: relative;
   width: 100%
 }
+
+.RightCard{
+  background-color: #FBF3D5;
+  color: #525960;
+}

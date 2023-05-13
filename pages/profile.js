@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
 import User from '../components/User';
 import { useAuth } from '../utils/context/authContext';

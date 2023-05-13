@@ -28,8 +28,8 @@ const AllUsers = () => {
 
   return (
     <div>
-      {users.map((user) => (
-        <User key={user.id} user={user} />
+      {users.map((userData) => (
+        <User key={userData.id} user={userData} />
       ))}
     </div>
   );
