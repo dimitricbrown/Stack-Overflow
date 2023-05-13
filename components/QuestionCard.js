@@ -35,21 +35,23 @@ function QuestionCard({ questionObj, onUpdate }) {
               DELETE
             </Button>
           ) : ''}
-          {questionObj.uid === user.uid ? (
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-              <img
-                src={user.photoURL}
-                alt={user.displayName}
-                style={{
-                  height: '30px',
-                  width: '30px',
-                  borderRadius: '50%',
-                  marginRight: '10px',
-                }}
-              />
-              <p>{user.displayName}</p>
-            </div>
-          ) : ''}
+          <Link passHref href="/profile">
+            {questionObj.uid === user.uid ? (
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <img
+                  src={user.photoURL}
+                  alt={user.displayName}
+                  style={{
+                    height: '30px',
+                    width: '30px',
+                    borderRadius: '50%',
+                    marginRight: '10px',
+                  }}
+                />
+                <p>{user.displayName}</p>
+              </div>
+            ) : ''}
+          </Link>
         </div>
       </Card.Body>
     </Card>
