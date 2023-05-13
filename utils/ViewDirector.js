@@ -6,7 +6,7 @@ import NavBarAuth from '../components/NavBarAuth';
 import SideNavBar from '../components/SideNavBar';
 import Footer from '../components/Footer';
 
-function ViewDirectorBasedOnUserAuthStatus({ component: Component, pageProps }) {
+const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) => {
   const { user, userLoading } = useAuth();
 
   // if user state is null, then show loader
@@ -31,7 +31,7 @@ function ViewDirectorBasedOnUserAuthStatus({ component: Component, pageProps }) 
   }
 
   return <Signin />;
-}
+};
 
 export default ViewDirectorBasedOnUserAuthStatus;
 
