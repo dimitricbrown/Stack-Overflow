@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { CloseButton } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -16,10 +17,11 @@ function CompanyCard({ companyObj, onUpdate }) {
   };
 
   return (
-
     <div id="companyContainer">
       <Card className="e-card e-card-horizontal" style={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
-        <Card.Img variant="center" src={companyObj.company_img} style={{ height: '100px' }} />
+        <Link href={`/company/${companyObj.firebaseKey}`} passHref>
+          <Card.Img variant="center" src={companyObj.company_img} style={{ height: '100px' }} />
+        </Link>
         <Card.Body className="e-card-stacked">
           <Card.Title>{companyObj.company_title}</Card.Title>
           <Card.Text>{companyObj.company_location}</Card.Text>
@@ -32,14 +34,15 @@ function CompanyCard({ companyObj, onUpdate }) {
               </Accordion.Item>
             </Accordion>
           </Card.Text>
-          <Button style={{ position: 'absolute', bottom: '8px', left: '16px' }}variant="primary">{companyObj.company_tag}</Button>
+          <Button style={{ position: 'absolute', bottom: '8px', left: '16px' }} variant="primary">
+            {companyObj.company_tag}
+          </Button>
           <CloseButton id="closeButton" variant="white" onClick={deleteThisCompany} className="m-2">
             X
           </CloseButton>
         </Card.Body>
       </Card>
     </div>
-   
   );
 }
 

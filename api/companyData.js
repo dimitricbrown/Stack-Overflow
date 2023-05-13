@@ -15,6 +15,18 @@ const getCompany = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getSingleCompany = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/company/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 const createCompany = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/company.json`, {
     method: 'POST',
@@ -58,4 +70,5 @@ export {
   updateCompany,
   createCompany,
   deleteSingleCompany,
+  getSingleCompany,
 };
