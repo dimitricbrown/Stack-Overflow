@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
-import { useAuth } from '../utils/context/authContext';
 import User from '../components/User';
+import { useAuth } from '../utils/context/authContext';
 import QuestionCard from '../components/QuestionCard';
 import { getUserQuestions } from '../api/questionData';
 
@@ -32,7 +32,7 @@ export default function Profile() {
     <div className="profile-page">
       <Row>
         <Col sm={4}>
-          <User userObj={user} />
+          <User user={user} />
         </Col>
         <Col sm={8}>
           <h3>My questions</h3>
