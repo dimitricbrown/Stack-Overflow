@@ -25,16 +25,18 @@ function QuestionCard({ questionObj, onUpdate }) {
         </Card.Text>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          {questionObj.uid === user.uid ? (
-            <Link href={`/questions/edit/${questionObj.firebaseKey}`} passHref>
-              <Button variant="outline-warning">EDIT</Button>
-            </Link>
-          ) : ''}
-          {questionObj.uid === user.uid ? (
-            <Button variant="outline-warning" onClick={deleteThisQuestion} className="m-2">
-              DELETE
-            </Button>
-          ) : ''}
+          <div>
+            {questionObj.uid === user.uid ? (
+              <Link href={`/questions/edit/${questionObj.firebaseKey}`} passHref>
+                <Button variant="outline-warning">EDIT</Button>
+              </Link>
+            ) : ''}
+            {questionObj.uid === user.uid ? (
+              <Button variant="outline-secondary" onClick={deleteThisQuestion} className="m-2">
+                DELETE
+              </Button>
+            ) : ''}
+          </div>
           <Link passHref href="/profile">
             {questionObj.uid === user.uid ? (
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>

@@ -22,16 +22,18 @@ function AnswerCard({ answerObj, onUpdate }) {
         <Card.Text>{answerObj.title}</Card.Text>
         <Card.Text>{answerObj.details}</Card.Text>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          {answerObj.uid === user.uid ? (
-            <Link href={`/answers/edit/${answerObj.firebaseKey}`} passHref>
-              <Button variant="outline-warning" style={{ height: '100%' }}>EDIT</Button>
-            </Link>
-          ) : ''}
-          {answerObj.uid === user.uid ? (
-            <Button variant="outline-secondary" onClick={deleteThisAnswer} className="m-2" style={{ height: '100%' }}>
-              DELETE
-            </Button>
-          ) : ''}
+          <div>
+            {answerObj.uid === user.uid ? (
+              <Link href={`/answers/edit/${answerObj.firebaseKey}`} passHref>
+                <Button variant="outline-warning" style={{ height: '100%' }}>EDIT</Button>
+              </Link>
+            ) : ''}
+            {answerObj.uid === user.uid ? (
+              <Button variant="outline-secondary" onClick={deleteThisAnswer} className="m-2" style={{ height: '100%' }}>
+                DELETE
+              </Button>
+            ) : ''}
+          </div>
           {answerObj.uid === user.uid ? (
             <div style={{ display: 'flex' }}>
               <img
