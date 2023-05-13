@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { getQuestions } from '../api/questionData';
 import QuestionCard from '../components/QuestionCard';
 import RightCard from '../components/RightCard';
