@@ -31,7 +31,7 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div style={{ marginTop: '50px' }}>
       <Row>
         <Col sm={8}>
           <div className="containerQuestion">
@@ -51,7 +51,7 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <h5 style={{ marginTop: '60px' }}>{count} Questions</h5>
+            <h5 style={{ marginTop: '30px' }}>{count} Questions</h5>
             <div className="d-flex flex-wrap" style={{ width: '100%', color: 'black', marginBottom: '50px' }}>
               {/* check if questions is an array before mapping */}
               {Array.isArray(questions) && questions.map((question) => <QuestionCard key={question.firebaseKey} questionObj={question} onUpdate={getAllTheQuestions} />)}
