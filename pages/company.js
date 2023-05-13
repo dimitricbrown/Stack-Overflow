@@ -24,7 +24,8 @@ const Company = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ marginTop: "50px" }}>
+      <p>Find company</p>
       <input
         type="text"
         id="myInput"
@@ -35,10 +36,9 @@ const Company = () => {
         style={{
           backgroundPosition: '10px 12px',
           backgroundRepeat: 'no-repeat',
-          width: '100%',
+          width: '50%',
           fontSize: '16px',
           padding: '12px 20px 12px 40px',
-          border: '1px solid #ddd',
           marginBottom: '12px',
         }}
       />

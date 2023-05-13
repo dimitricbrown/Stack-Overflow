@@ -79,7 +79,7 @@ function AnswerForm({ obj, questionId }) {
       </FloatingLabel>
       <div>
         {/* SUBMIT BUTTON  */}
-        <Button type="submit" style={{ marginBottom: '30px' }}>{obj.firebaseKey ? 'Update' : 'Post'} Your Answer</Button>
+        <Button type="submit" variant="outline-warning" style={{ marginBottom: '30px' }}>{obj.firebaseKey ? 'Update' : 'Post'} Your Answer</Button>
       </div>
     </Form>
   );

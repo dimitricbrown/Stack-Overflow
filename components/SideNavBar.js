@@ -20,7 +20,7 @@ export default function SideNavBar() {
         <Link passHref href="/profile">
           <Nav.Link>Profile</Nav.Link>
         </Link>
-        <Link passHref href="/">
+        <Link passHref href="/users">
           <Nav.Link>Users</Nav.Link>
         </Link>
       </Nav>
