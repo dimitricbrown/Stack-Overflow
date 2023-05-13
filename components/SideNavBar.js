@@ -7,7 +7,7 @@ export default function SideNavBar() {
   return (
     <div className="sidebar">
       <Container className="sidebar-container">
-        <Nav className="sidebar-flex-column-nav">
+        <Nav className="flex-column">
           {/* CLOSE NAVBAR ON LINK SELECTION: https://stackoverflow.com/questions/72813635/collapse-on-select-react-bootstrap-navbar-with-nextjs-not-working */}
           <Link className="ps-relative" passHref href="/">
             <Nav.Link className="nav-topic">Questions</Nav.Link>
