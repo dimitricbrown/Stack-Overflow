@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Card from 'react-bootstrap/Card';
 
 function RightCard() {
@@ -24,7 +23,8 @@ function RightCard() {
             Temporary policy: ChatGPT is banned
             The [connect] tag is being burninated
             Take the 2023 Developer Survey
-            Stack Overflow will be testing a title-drafting assistant, and we’d like your...</Card.Text>
+            Stack Overflow will be testing a title-drafting assistant, and we’d like your...
+          </Card.Text>
         </Card.Body>
       </Card>
       <br />
